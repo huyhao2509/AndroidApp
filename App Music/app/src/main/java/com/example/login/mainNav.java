@@ -9,7 +9,7 @@ import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class mainNav extends AppCompatActivity {
+public class MainNav extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,7 +18,7 @@ public class mainNav extends AppCompatActivity {
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setOnNavigationItemSelectedListener(navigationItemSelectedListener);
-        getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainerView,new firstFragment()).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainerView,new ProfilePage()).commit();
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener navigationItemSelectedListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -28,10 +28,10 @@ public class mainNav extends AppCompatActivity {
             Fragment selectedFragment=null;
             switch (item.getItemId()){
                 case R.id.firstFragment:
-                    selectedFragment=new firstFragment();
+                    selectedFragment=new ProfilePage();
                     break;
                 case R.id.secondFragment:
-                    selectedFragment=new secondFragment();
+                    selectedFragment=new MusicPage();
                     break;
             }
 
